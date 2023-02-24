@@ -47,7 +47,7 @@ def chart_builder(coord_group):
 
         size = "incident_id", 
 
-        opacity = 0.7,
+        opacity = 0.65,
 
 
         scope = 'usa',
