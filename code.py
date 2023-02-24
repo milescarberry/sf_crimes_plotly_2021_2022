@@ -58,7 +58,7 @@ def model_builder(lar, clusters):
         lar_df = load(file)
     
     
-    lar_df = lar_df.drop(columns = ['coordinates_'])
+    # lar_df = lar_df.drop(columns = ['coordinates_'])
     
     
     coord_group = lar_df[lar_df.incident_subcategory == lar].groupby('coordinates').agg({"incident_id": pd.Series.nunique}).reset_index().sort_values(by = "incident_id", ascending = False).reset_index(drop = True)
