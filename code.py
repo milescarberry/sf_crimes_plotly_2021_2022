@@ -153,7 +153,7 @@ def chart_builder(coord_group):
     fig.update_layout(uniformtext_minsize = 12)
 
 
-    fig.update_layout(width = 1000, height = 500)
+    fig.update_layout(width = 1050, height = 500)
 
 
     # fig.update_layout(paper_bgcolor = " #1e1e1e")        # Paper: The screen which is not a part of the plot.
