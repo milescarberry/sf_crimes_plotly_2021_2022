@@ -242,7 +242,7 @@ def chart_sidebar():
         coord_group_name = st.sidebar.selectbox(
 
 
-            label = "Select Weighting Parameter", 
+            label = "Select Theft Type", 
 
 
             options = lars
