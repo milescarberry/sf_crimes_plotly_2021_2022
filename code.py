@@ -46,13 +46,13 @@ def chart_builder(coord_group):
 
         color = "cluster", 
 
-        color_discrete_sequence = exp.colors.qualitative.Pastel2,
+        color_discrete_sequence = exp.colors.qualitative.Vivid,
 
         size = "incident_id", 
 
         size_max = 15,
 
-        opacity = 0.65,
+        opacity = 0.7,
 
 
         mapbox_style = 'carto-darkmatter',
@@ -192,6 +192,7 @@ def chart_builder(coord_group):
 
 def chart_sidebar():
 
+
         lars = ['From Vehicle',
                  'Shoplifting',
                  'Other',
@@ -206,10 +207,22 @@ def chart_sidebar():
         lars.sort()
 
 
+
+        years = [2021 + i for i in range(2)]
+
+
+
+        years.sort()
+
+
+
         st.sidebar.markdown(
             '<b class="header-style">Parameters</b>',
             unsafe_allow_html=True
         )
+
+
+
 
 
         st.sidebar.markdown(
@@ -229,7 +242,7 @@ def chart_sidebar():
         coord_group_name = st.sidebar.selectbox(
 
 
-            label = "Select Theft Type", 
+            label = "Select Weighting Parameter", 
 
 
             options = lars
@@ -247,24 +260,45 @@ def chart_sidebar():
 
 
 
+
+        year = st.sidebar.selectbox(
+
+
+            label = "Select Year", 
+
+
+            options = years
+
+
+            )
+
+
+
+        st.sidebar.markdown(
+            '<br>',
+            unsafe_allow_html=True
+        )
+
+
+
         n_clusters = st.sidebar.slider(
 
-            label = "Number of Clusters", 
+            label = "Select Number of Clusters", 
 
             min_value = 2, 
 
-            max_value = 11,
+            max_value = 10,
 
-            value = 5
+            value = 3
 
 
             )
 
       
-        values = [coord_group_name, n_clusters]
+        values = [coord_group_name, year, n_clusters]
 
 
-        with open(f'./model_files/model_{coord_group_name}_{n_clusters}.pkl', 'rb') as file:
+        with open(f'./model_files/model_{coord_group_name}_{year}_{n_clusters}.pkl', 'rb') as file:
 
 
                 coord_group = load(file)
@@ -285,7 +319,7 @@ def chart_header():
     st.set_page_config(
 
 
-        page_title="App Title",
+        page_title="Centres of Theft in San Franciso (2021 - 2022)",
 
 
         layout="wide"
@@ -355,7 +389,7 @@ def chart_header():
 
     st.markdown(
 
-            '<b class="header-style" style="font-size:30px;"> Chart Title </b>',
+            '<b class="header-style" style="font-size:30px;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centers of Theft in San Franciso for the Years 2021 and 2022</b>',
 
 
             unsafe_allow_html=True
