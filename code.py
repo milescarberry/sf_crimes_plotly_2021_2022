@@ -389,7 +389,7 @@ def chart_header():
 
     st.markdown(
 
-            '<b class="header-style" style="font-size:30px;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centers of Theft in San Franciso for the Years 2021 and 2022</b>',
+            '<b class="header-style" style="font-size:30px;text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centers of Thefts in San Franciso for the Years 2021 and 2022</b>',
 
 
             unsafe_allow_html=True
